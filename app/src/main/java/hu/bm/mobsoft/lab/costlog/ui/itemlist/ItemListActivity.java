@@ -1,4 +1,5 @@
-package hu.bm.mobsoft.lab.costlog.ui.loing;
+package hu.bm.mobsoft.lab.costlog.ui.itemlist;
+
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +10,9 @@ import javax.inject.Inject;
 import hu.bm.mobsoft.lab.costlog.MobSoftApplication;
 import hu.bm.mobsoft.lab.costlog.R;
 
-public class LoginActivity extends AppCompatActivity implements LoginScreen {
+public class ItemListActivity extends AppCompatActivity implements  ItemListScreen {
     @Inject
-    LoginPresenter loginPresenter;
+    ItemListPresenter itemListPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +25,17 @@ public class LoginActivity extends AppCompatActivity implements LoginScreen {
     @Override
     protected void onStart() {
         super.onStart();
-        loginPresenter.attachScreen(this);
+        itemListPresenter.attachScreen(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        loginPresenter.detachScreen();
+        itemListPresenter.detachScreen();
     }
 
     @Override
-    public void showLoginFields() {
-        Toast.makeText(this, "Showing login screen", Toast.LENGTH_SHORT).show();
+    public void showList() {
+        Toast.makeText(this, "Show list of the items.", Toast.LENGTH_SHORT).show();
     }
 }

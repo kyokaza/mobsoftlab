@@ -7,6 +7,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListPresenter;
+import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListScreen;
 import hu.bm.mobsoft.lab.costlog.ui.loing.LoginPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.main.MainPresenter;
 
@@ -33,6 +35,12 @@ public class UIModule {
     @Singleton
     public LoginPresenter provideLoginPresenter() {
         return new LoginPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public ItemListPresenter provideItemListPresenter() {
+        return new ItemListPresenter();
     }
 
 }
