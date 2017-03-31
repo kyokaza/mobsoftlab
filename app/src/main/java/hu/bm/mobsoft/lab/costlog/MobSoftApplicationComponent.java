@@ -10,6 +10,7 @@ import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListActivity;
 import hu.bm.mobsoft.lab.costlog.ui.loing.LoginActivity;
 import hu.bm.mobsoft.lab.costlog.ui.main.MainActivity;
 import hu.bm.mobsoft.lab.costlog.ui.modifieitem.ModifieItemActivity;
+import hu.bm.mobsoft.lab.costlog.ui.statistic.StatisticActivity;
 
 @Singleton
 @Component(modules = {UIModule.class})
@@ -19,4 +20,5 @@ public interface MobSoftApplicationComponent {
     void inject(ItemListActivity    itemListActivity);
     void inject(CreateItemActivity  createItemActivity);
     void inject(ModifieItemActivity modifieItemActivity);
+    void inject(StatisticActivity   statisticActivity);
 }
