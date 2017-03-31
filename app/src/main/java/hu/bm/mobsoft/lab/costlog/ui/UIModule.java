@@ -12,6 +12,7 @@ import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListScreen;
 import hu.bm.mobsoft.lab.costlog.ui.loing.LoginPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.main.MainPresenter;
+import hu.bm.mobsoft.lab.costlog.ui.modifieitem.ModifieItemPresenter;
 
 @Module
 public class UIModule {
@@ -48,6 +49,12 @@ public class UIModule {
     @Singleton
     public CreateItemPresenter provideCreateItemPresenter() {
         return new CreateItemPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public ModifieItemPresenter provideModifieItemPresenter() {
+        return new ModifieItemPresenter();
     }
 
 }
