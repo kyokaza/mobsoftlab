@@ -1,15 +1,29 @@
 package hu.bm.mobsoft.lab.costlog.model;
 
+import com.orm.dsl.Table;
+
+@Table
 public class User {
+    private Long id;
+
     String username;
     String password;
 
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(Long id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

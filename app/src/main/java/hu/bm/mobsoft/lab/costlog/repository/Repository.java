@@ -15,13 +15,13 @@ public interface Repository {
 
     List<Item> getItems();
 
-    void saveItems(Item todo);
+    void saveItem(Item item);
 
-    void updateFavourites(List<Item> todos);
+    void updateItem(Item item);
 
-    void removeFavourite(Item todo);
+    void removeItem(Item item);
 
-    boolean isInDB(Item todo);
+    List<User> getUser(User user);
 
-    User getUser();
+    void saveUser(User user);
 }

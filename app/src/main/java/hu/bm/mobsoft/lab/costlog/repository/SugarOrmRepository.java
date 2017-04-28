@@ -30,40 +30,38 @@ public class SugarOrmRepository implements Repository {
     }
 
     @Override
-    public void saveItems(Item item) {
-        SugarRecord.saveInTx(item);
+    public void saveItem(Item item) {
+        SugarRecord.save(item);
     }
 
     @Override
-    public void updateFavourites(List<Item> items) {
-        List<Item> itemsAll = getItems();
-        List<Item> toUpdate = new ArrayList<>(itemsAll.size());
-        for (Item itemIter : itemsAll) {
-            for (Item item : items) {
-                if (item.getId().equals(itemIter.getId())) {
-                    toUpdate.add(item);
-                }
-            }
-        }
-        SugarRecord.saveInTx(toUpdate);
+    public void updateItem(Item item) {
+//        List<Item> itemsAll = getItems();
+//        List<Item> toUpdate = new ArrayList<>(itemsAll.size());
+//        for (Item itemIter : itemsAll) {
+//            for (Item i : item) {
+//                if (item.getId().equals(itemIter.getId())) {
+//                    toUpdate.add(item);
+//                }
+//            }
+//        }
+//        SugarRecord.saveInTx(toUpdate);
+        SugarRecord.save(item);
     }
 
     @Override
-    public void removeFavourite(Item item) {
-        SugarRecord.deleteInTx(item);
+    public void removeItem(Item item) {
+        SugarRecord.delete(item);
+    }
+
+
+    @Override
+    public List<User>getUser(User user) {
+        return SugarRecord.find(User.class, "username", user.getUsername());
     }
 
     @Override
-    public boolean isInDB(Item item) {
-        return SugarRecord.findById(Item.class, item.getId()) != null;
-        //TODO need some sugar db addition.
-//        return true;
+    public void saveUser(User user) {
+        SugarRecord.save(user);
     }
-
-    @Override
-    public User getUser() {
-        //TODO fixen beleégetett user, nem része a feladatnak h le legyen tárolva.
-        return new User("Alma", "Alma");
-    }
-
 }

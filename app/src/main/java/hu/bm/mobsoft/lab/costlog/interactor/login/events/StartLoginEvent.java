@@ -8,13 +8,11 @@ public class StartLoginEvent {
     private Throwable throwable;
 
     public StartLoginEvent() {
-        this.code = 200;
-        this.user = new User("Alma", "Alma");
     }
 
     public StartLoginEvent(int code, User user, Throwable throwable) {
-        this.code = 200;
-        this.user = new User("Alma", "Alma");
+        this.code = code;
+        this.user = user;
         this.throwable = throwable;
     }
 
