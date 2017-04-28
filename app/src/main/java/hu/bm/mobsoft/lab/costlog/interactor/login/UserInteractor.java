@@ -1,5 +1,7 @@
 package hu.bm.mobsoft.lab.costlog.interactor.login;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
@@ -27,8 +29,8 @@ public class UserInteractor {
     public void startLogin(User user) {
         StartLoginEvent event = new StartLoginEvent();
         try {
-            User fetchUser = repository.getUser();
-            event.setUser(fetchUser);
+            List<User> fetchUser = repository.getUser(user);
+            event.setUser(fetchUser.get(0));
             bus.post(event);
         } catch (Exception e) {
             event.setThrowable(e);
