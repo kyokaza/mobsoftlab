@@ -3,10 +3,14 @@ package hu.bm.mobsoft.lab.costlog.ui;
 
 import android.content.Context;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import de.greenrobot.event.EventBus;
 import hu.bm.mobsoft.lab.costlog.ui.createitem.CreateItemPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListScreen;
@@ -62,6 +66,19 @@ public class UIModule {
     @Singleton
     public StatisticPresenter provideStatisticPresenter() {
         return new StatisticPresenter();
+    }
+
+
+    @Provides
+    @Singleton
+    public EventBus provideEventBus() {
+        return EventBus.getDefault();
+    }
+
+    @Provides
+    @Singleton
+    public Executor provideExecutor() {
+        return Executors.newFixedThreadPool(1);
     }
 
 }

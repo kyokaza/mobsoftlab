@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  description: Description for mosoftlab WRYDX5.
+  version: 1.0.0
+  title: Cost management
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+host: localhost
+basePath: /api
+paths:
+  /login:
+    post:
+      tags:
+        - login
+      summary: Login
+      parameters:
+        - in: body
+          name: body
+          description: User in
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Wrong user creddentials
+  /item:
+    post:
+      tags:
+        - Item
+      summary: add item to the cost manager
+      parameters:
+        - in: body
+          name: body
+          description: add item
+          required: true
+          schema:
+            $ref: '#/definitions/Item'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Wrong item
+    get:
+      tags:
+        - Item
+      summary: Find all item
+      description: Get all item
+      responses:
+        '200':
+          description: successful querri of items
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Item'
+    put:
+      tags:
+        - Item
+      summary: Update item
+      description: update item
+      parameters:
+        - in: body
+          name: body
+          description: Item needed
+          required: true
+          schema:
+            $ref: '#/definitions/Item'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Wrong item
+        '401':
+          description: Unauthorized
+  /item/{itemId}:
+    delete:
+      tags:
+        - Item
+      summary: Delete item
+      description: Delete item
+      parameters:
+        - name: itemId
+          in: path
+          description: Item id to delete
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Wrong item
+        '401':
+          description: Unauthorized
+definitions:
+  Item:
+    type: object
+    properties:
+      id:
+        type: string
+      cost:
+        type: integer
+        format: int64
+      date:
+        type: string
+        format: date-time
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
