@@ -1,42 +1,38 @@
-package hu.bm.mobsoft.lab.costlog.interactor.item;
-
-import java.util.List;
+package hu.bm.mobsoft.lab.costlog.interactor.login;
 
 import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
 import hu.bm.mobsoft.lab.costlog.MobSoftApplication;
-import hu.bm.mobsoft.lab.costlog.interactor.item.events.GetItemsEvent;
-import hu.bm.mobsoft.lab.costlog.model.Item;
+import hu.bm.mobsoft.lab.costlog.interactor.login.events.StartLoginEvent;
+import hu.bm.mobsoft.lab.costlog.model.User;
 import hu.bm.mobsoft.lab.costlog.repository.Repository;
 
-public class CostItemInteractor {
+public class UserInteractor {
 
     @Inject
     Repository repository;
     @Inject
     EventBus bus;
 
-    public CostItemInteractor() {
+    public UserInteractor() {
         MobSoftApplication.injector.inject(this);
     }
 
-    public CostItemInteractor(Repository repository, EventBus bus) {
+    public UserInteractor(Repository repository, EventBus bus) {
         this.repository = repository;
         this.bus = bus;
     }
 
-    public void getItems() {
-        GetItemsEvent event = new GetItemsEvent();
+    public void startLogin(User user) {
+        StartLoginEvent event = new StartLoginEvent();
         try {
-            List<Item> items = repository.getItems();
-            event.setItems(items);
+            User fetchUser = repository.getUser();
+            event.setUser(fetchUser);
             bus.post(event);
         } catch (Exception e) {
             event.setThrowable(e);
             bus.post(event);
         }
     }
-
-
 }

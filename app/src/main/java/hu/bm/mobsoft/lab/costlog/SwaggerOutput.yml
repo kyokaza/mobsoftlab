@@ -100,7 +100,7 @@ definitions:
   Item:
     type: object
     properties:
-      id:
+      serverId:
         type: string
       cost:
         type: integer

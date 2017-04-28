@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.List;
 
 import hu.bm.mobsoft.lab.costlog.model.Item;
+import hu.bm.mobsoft.lab.costlog.model.User;
 
 public interface Repository {
 
@@ -21,4 +22,6 @@ public interface Repository {
     void removeFavourite(Item todo);
 
     boolean isInDB(Item todo);
+
+    User getUser();
 }

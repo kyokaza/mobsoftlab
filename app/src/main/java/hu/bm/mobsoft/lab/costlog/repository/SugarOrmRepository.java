@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hu.bm.mobsoft.lab.costlog.model.Item;
+import hu.bm.mobsoft.lab.costlog.model.User;
 
 
 public class SugarOrmRepository implements Repository {
@@ -54,9 +55,15 @@ public class SugarOrmRepository implements Repository {
 
     @Override
     public boolean isInDB(Item item) {
-//        return SugarRecord.findById(Item.class, item.getId()) != null;
+        return SugarRecord.findById(Item.class, item.getId()) != null;
         //TODO need some sugar db addition.
-        return true;
+//        return true;
+    }
+
+    @Override
+    public User getUser() {
+        //TODO fixen beleégetett user, nem része a feladatnak h le legyen tárolva.
+        return new User("Alma", "Alma");
     }
 
 }
