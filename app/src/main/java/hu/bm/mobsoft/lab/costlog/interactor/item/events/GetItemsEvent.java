@@ -34,6 +34,11 @@ public class GetItemsEvent {
         this.items = items;
     }
 
+    public Item saveItem(Item item){
+        this.items.add(item);
+        return item;
+    }
+
     public Throwable getThrowable() {
         return throwable;
     }

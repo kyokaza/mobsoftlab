@@ -15,7 +15,7 @@ public interface Repository {
 
     List<Item> getItems();
 
-    void saveItem(Item item);
+    Item saveItem(Item item);
 
     void updateItem(Item item);
 

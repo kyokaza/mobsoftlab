@@ -38,5 +38,17 @@ public class CostItemInteractor {
         }
     }
 
+    public void doCreateItemInteraction(Item item){
+        GetItemsEvent event = new GetItemsEvent();
+        try {
+            Item itemSaved = repository.saveItem(item);
+            event.saveItem(itemSaved);
+            bus.post(event);
+        } catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
 
 }

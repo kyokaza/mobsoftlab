@@ -33,6 +33,7 @@ public interface MobSoftApplicationComponent {
 
     void inject(MainPresenter mainPresenter);
     void inject(ItemListPresenter itemListPresenter);
+    void inject(CreateItemPresenter createItemPresenter);
 
 
 }

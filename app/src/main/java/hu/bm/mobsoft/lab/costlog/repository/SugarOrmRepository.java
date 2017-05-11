@@ -30,8 +30,9 @@ public class SugarOrmRepository implements Repository {
     }
 
     @Override
-    public void saveItem(Item item) {
-        SugarRecord.save(item);
+    public Item saveItem(Item item) {
+        long savingId = SugarRecord.save(item);
+        return SugarRecord.findById(Item.class, savingId);
     }
 
     @Override

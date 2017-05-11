@@ -7,6 +7,13 @@ public class ModifieItemPresenter extends Presenter<ModifieItemScreen> {
     public ModifieItemPresenter() {
     }
 
+
+    /**
+     *
+     *
+     *
+     * No need to implement, because create activity can be reused for this.
+     */
     @Override
     public void attachScreen(ModifieItemScreen screen) {
         super.attachScreen(screen);

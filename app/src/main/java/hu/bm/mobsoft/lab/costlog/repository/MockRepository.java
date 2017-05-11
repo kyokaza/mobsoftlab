@@ -38,8 +38,9 @@ public class MockRepository implements Repository {
     }
 
     @Override
-    public void saveItem(Item item) {
+    public Item saveItem(Item item) {
         this.items.add(item);
+        return item;
     }
 
     @Override
