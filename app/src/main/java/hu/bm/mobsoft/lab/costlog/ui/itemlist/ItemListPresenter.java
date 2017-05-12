@@ -24,6 +24,8 @@ public class ItemListPresenter extends Presenter<ItemListScreen> {
     @Inject
     EventBus bus;
 
+    public ItemListPresenter() {
+    }
 
     @Override
     public void attachScreen(ItemListScreen screen) {

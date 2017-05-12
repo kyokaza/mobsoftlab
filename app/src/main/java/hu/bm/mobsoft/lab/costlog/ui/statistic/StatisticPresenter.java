@@ -31,6 +31,9 @@ public class StatisticPresenter extends Presenter<StatisticScreen> {
         bus.register(this);
     }
 
+    public StatisticPresenter() {
+    }
+
     @Override
     public void detachScreen() {
         bus.unregister(this);

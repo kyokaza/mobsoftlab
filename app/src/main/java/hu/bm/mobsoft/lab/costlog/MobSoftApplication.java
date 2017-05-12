@@ -19,4 +19,8 @@ public class MobSoftApplication extends Application {
                                 new UIModule(this)
                         ).build();
     }
+
+    public static void setInjector(MobSoftApplicationComponent injector) {
+        MobSoftApplication.injector = injector;
+    }
 }

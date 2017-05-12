@@ -104,7 +104,7 @@ definitions:
         type: string
       cost:
         type: integer
-        format: int64
+        format: int32
       date:
         type: string
         format: date-time

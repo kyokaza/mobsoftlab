@@ -13,9 +13,11 @@ import hu.bm.mobsoft.lab.costlog.ui.createitem.CreateItemPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListActivity;
 import hu.bm.mobsoft.lab.costlog.ui.itemlist.ItemListPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.loing.LoginActivity;
+import hu.bm.mobsoft.lab.costlog.ui.loing.LoginPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.main.MainActivity;
 import hu.bm.mobsoft.lab.costlog.ui.main.MainPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.modifieitem.ModifieItemActivity;
+import hu.bm.mobsoft.lab.costlog.ui.modifieitem.ModifieItemPresenter;
 import hu.bm.mobsoft.lab.costlog.ui.statistic.StatisticActivity;
 import hu.bm.mobsoft.lab.costlog.ui.statistic.StatisticPresenter;
 
@@ -26,7 +28,7 @@ public interface MobSoftApplicationComponent {
     void inject(LoginActivity loginActivity);
     void inject(ItemListActivity itemListActivity);
     void inject(CreateItemActivity createItemActivity);
-    void inject(ModifieItemActivity modifieItemActivity);
+//    void inject(ModifieItemActivity modifieItemActivity);
     void inject(StatisticActivity statisticActivity);
 
     void inject(CostItemInteractor costItemInteractor);
@@ -36,6 +38,7 @@ public interface MobSoftApplicationComponent {
     void inject(ItemListPresenter itemListPresenter);
     void inject(CreateItemPresenter createItemPresenter);
     void inject(StatisticPresenter statisticPresenter);
-
+    void inject(LoginPresenter loginPresenter);
+//    void inject(ModifieItemPresenter modifieItemPresenter);
 
 }

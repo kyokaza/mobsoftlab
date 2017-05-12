@@ -56,11 +56,11 @@ public class UIModule {
         return new CreateItemPresenter();
     }
 
-    @Provides
-    @Singleton
-    public ModifieItemPresenter provideModifieItemPresenter() {
-        return new ModifieItemPresenter();
-    }
+//    @Provides
+//    @Singleton
+//    public ModifieItemPresenter provideModifieItemPresenter() {
+//        return new ModifieItemPresenter();
+//    }
 
     @Provides
     @Singleton

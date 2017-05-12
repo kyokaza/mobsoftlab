@@ -26,6 +26,8 @@ public class MainPresenter extends Presenter<MainScreen> {
     @Inject
     EventBus bus;
 
+    public MainPresenter() {
+    }
 
     @Override
     public void attachScreen(MainScreen screen) {
