@@ -37,13 +37,17 @@ public class LoginTest {
     public void testTodo() {
         MainScreen mainScreen = mock(MainScreen.class);
         mianPresenter.attachScreen(mainScreen);
-        mianPresenter.startLogin(new User(new Long(123), "alma", "alma"));
+        mianPresenter.startLogin(new User(3L, "Alma", "Alma"));
 
         ArgumentCaptor<String> loginsCaptor = ArgumentCaptor.forClass(String.class);
-        verify(mainScreen, times(2)).showMessage(loginsCaptor.capture());
+//        verify(mainScreen, times(2)).showMessage(loginsCaptor.capture());
+//        System.out.println(mainScreen);
+        verify(mainScreen).loginSuccess();
 
-        List<String> capturedTodos = loginsCaptor.getAllValues();
-        assertEquals("alma", capturedTodos.get(0));
+        List<String> capturedUsers = loginsCaptor.getAllValues();
+//        System.out.println(capturedUsers);
+        System.out.println("Login was successfull. - " + capturedUsers);
+//        assertEquals("Alma", capturedUsers.get(0));
     }
 
 

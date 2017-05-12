@@ -41,4 +41,6 @@ public interface MobSoftApplicationComponent {
     void inject(LoginPresenter loginPresenter);
 //    void inject(ModifieItemPresenter modifieItemPresenter);
 
+    void inject(MobSoftApplication mobSoftApplication);
+
 }

@@ -30,6 +30,7 @@ public class UserInteractor {
         StartLoginEvent event = new StartLoginEvent();
         try {
             List<User> fetchUser = repository.getUser(user);
+            System.out.println("StartLogin - " + fetchUser.get(0).getUsername() + " was fetched successfully.");
             event.setUser(fetchUser.get(0));
             bus.post(event);
         } catch (Exception e) {

@@ -62,6 +62,7 @@ public class MainPresenter extends Presenter<MainScreen> {
         } else {
             if (screen != null) {
                 screen.loginSuccess();
+                System.out.println("Something happened in main screen.");
             }
         }
     }
