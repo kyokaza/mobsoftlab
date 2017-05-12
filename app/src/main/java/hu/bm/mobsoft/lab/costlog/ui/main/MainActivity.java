@@ -46,5 +46,6 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         Intent intent = new Intent(this, ItemListActivity.class);
         startActivity(intent);
         finish();
+
     }
 }
